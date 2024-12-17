@@ -24,13 +24,13 @@ function formatDate(date) {
   let hours = date.getHours();
   let mintues = date.getMinutes();
   let days = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
   let day = days[date.getDay()];
   if (mintues < 10) {
