@@ -18,6 +18,8 @@ function updateWeatherData(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   temperatureElement.innerHTML = Math.round(temperature);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -53,7 +55,13 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value); //When a city is entred (this function has been ran) it goes to the top function to get the apikey (data) of the city they have entered.
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "oe47bb3454cd0f1af7dfdf430teb7c08";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast); // to get the data we need axios to go and get the information. Then display the forecast
+}
+
+function displayForecast(response) {
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
 
@@ -82,4 +90,3 @@ searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("London"); // This is calling the 'searchCity' when I load the page, which will go insde the 'searchCity function'
 //it makes a call to the API which replaces the 2 elements
-displayForecast();
