@@ -1,5 +1,7 @@
 body {
-  background-color: #f9f7fe;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6eXF_UJpdDvyQogjoCPW9kx-ou7LFvgzmwA&s");
+  background-image: no-repeat;
+  background-size: cover;
   font-family: "Playfair Display", serif;
 }
 
@@ -13,6 +15,7 @@ a {
   margin: 45px auto;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   border-radius: 16px;
+  border: 2px solid black;
   padding: 30px;
 }
 
